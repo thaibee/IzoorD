@@ -1,0 +1,4 @@
+/venv/
+/static/
+.idea
+IzoorD/local_settings.py

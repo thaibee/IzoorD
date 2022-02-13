@@ -1,0 +1,56 @@
+{% load static %}
+<div
+        id="sidenav-1"
+        class="sidenav"
+        role="navigation"
+        data-hidden="false"
+        data-accordion="true"
+>
+    <a
+            class="ripple d-flex justify-content-center"
+            href="{% url 'home' %}"
+{#            data-ripple-color="primary"#}
+    >
+        <img
+                id="Izoor-logo"
+                src="{% static "img/logo_long_2021-08.svg" %}"
+                alt="Izoor Logo"
+                draggable="false"
+                class="px-5 py-1 mb-2 shadow-2-strong"
+        />
+    </a>
+    <ul class="sidenav-menu font-weight-bold sidenav-dark">
+        <li class="sidenav-item">
+            <a class="sidenav-link" href="">
+                <i class="fas fa-chart-area pr-3"></i
+                ><span>Main page</span></a
+            >
+        </li>
+        <li class="sidenav-item">
+            <a class="sidenav-link"
+            ><i class="fas fa-cogs pr-3"></i><span>Foods</span></a
+            >
+            <ul class="sidenav-collapse">
+                <li class="sidenav-item">
+                    <a class="sidenav-link" href="#">Huuds</a>
+                </li>
+                <li class="sidenav-item">
+                    <a class="sidenav-link">Account</a>
+                </li>
+            </ul>
+        </li>
+        <li class="sidenav-item">
+            <a class="sidenav-link"
+            ><i class="fas fa-lock pr-3"></i><span>Password</span></a
+            >
+            <ul class="sidenav-collapse">
+                <li class="sidenav-item">
+                    <a class="sidenav-link">Request password</a>
+                </li>
+                <li class="sidenav-item">
+                    <a class="sidenav-link">Reset password</a>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</div>

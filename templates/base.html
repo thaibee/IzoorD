@@ -1,0 +1,76 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <meta http-equiv="x-ua-compatible" content="ie=edge"/>
+    <link rel="icon" type="image/svg+xml" href="{% static 'img/favicon.svg' %}">
+    <link rel="icon" type="image/png" href="{% static 'img/favicon.png' %}">
+    <link rel="stylesheet" href="{% static 'css/mdb.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/for_padding.css' %}">
+    <link rel="stylesheet" href="{% static 'css/all.min.css' %}"/>
+    <link rel="stylesheet" href="{% static 'css/daterangepicker.css' %}"/>
+    <title>{% block title %}New version Izoor{% endblock %}</title>
+
+</head>
+<body>
+
+<header>
+    {% include 'inc/sidebar.html' %}
+    {% include 'inc/navbar.html' %}
+</header>
+<main class="my-4">
+    <div class="container">
+        {% block content %}
+
+        {% endblock %}
+    </div>
+</main>
+
+<script type="text/javascript" src="{% static 'js/mdb.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/jquery-3.6.0.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/moment.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/daterangepicker.js' %}"></script>
+
+<script>
+
+    const sidenav = document.getElementById("sidenav-1");
+    const instance = mdb.Sidenav.getInstance(sidenav);
+
+    let innerWidth = null;
+
+    const setMode = (e) => {
+        // Check necessary for Android devices
+        if (window.innerWidth === innerWidth) {
+            return;
+        }
+
+        innerWidth = window.innerWidth;
+
+        if (window.innerWidth < 1000) {
+            instance.changeMode("over");
+            instance.hide();
+        } else {
+            instance.changeMode("side");
+            instance.show();
+        }
+    };
+
+    setMode();
+
+    // Event listeners
+    window.addEventListener("resize", setMode);
+
+    // DatePicker
+    $('#demo').daterangepicker({
+        "showDropdowns": true,
+        "startDate": "06/18/2021",
+        "endDate": "06/24/2021",
+    }, function (start, end, label) {
+        console.log('New date range selected: ' + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD') + ' (predefined range: ' + label + ')');
+    });
+</script>
+
+</body>
+</html>
