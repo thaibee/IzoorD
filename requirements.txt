@@ -1,4 +1,7 @@
 asgiref==3.5.0
 Django==4.0.2
+mssql-django==1.1.2
+pyodbc @ file:///C:/Users/admin/PycharmProjects/IzoorD/pyodbc-4.0.32-cp310-cp310-win_amd64.whl
+pytz==2021.3
 sqlparse==0.4.2
 tzdata==2021.5
