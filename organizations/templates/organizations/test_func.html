@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %}Test title{% endblock %}
+
+{% block content %}
+    <h3>Test function</h3>
+
+    {{ countries }}
+
+    {% for country in countries %}
+        <p>{{ country }}</p>
+    {% endfor %}
+
+
+
+{% endblock %}

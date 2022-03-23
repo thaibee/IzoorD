@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block title %}Test title{% endblock %}
+
+{% block content %}
+    <h3>List of Organization</h3>
+
+
+
+    <form action="{% url 'org_detail' org.slug %}" method="post" class="col-md-5">
+        {% csrf_token %}
+        {{ form.as_p }}
+{#            <div class="form-outline mb-2">#}
+{#                <input type="text" name="" class="form-control" required id="{{ form.org_name }}#}
+{#            <label class="form-label" for="Name">Name</label>#}
+            </div>
+{#            <div class="form-outline mb-2">#}
+{#                {{ item }}#}
+{#            <label class="form-label" for="{{ item.label }}">{{ item.label }}</label>#}
+{#            </div>#}
+
+
+        <button type="submit" class="btn btn-primary">Update</button>
+    </form>
+
+{% endblock %}
